@@ -14,7 +14,7 @@ try :
 except ValueError:
 	n = None
 
-assert n != None, "argument is not an integer"
+assert n is not None, "argument is not an integer"
 
 if (n % 2 == 0) :
 	print("I'm Even.")
