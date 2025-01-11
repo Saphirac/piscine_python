@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: ft_package
+Version: 0.0.1
+Summary: A sample test package
+Home-page: https://github.com/Saphirac/piscine_python
+Author: saph
+Author-email: saph@42.fr
+License: MIT
+Requires-Python: >=3.6
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
