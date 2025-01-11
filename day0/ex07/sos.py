@@ -1,6 +1,6 @@
 import sys
 
-NESTED_MORSE = { 
+NESTED_MORSE = {
     " ": "/",
     "A": ".-",
     "B": "-...",
@@ -37,7 +37,7 @@ NESTED_MORSE = {
     "7": "--...",
     "8": "---..",
     "9": "----.",
-    "0": "-----"
+    "0": "-----",
 }
 
 
@@ -45,7 +45,11 @@ def main():
     """Morse code converter"""
     assert len(sys.argv) == 2
     assert all(c.isalnum() or c.isspace() for c in sys.argv[1])
-    print(" ".join([NESTED_MORSE[c.upper()] for c in sys.argv[1] if c.isalnum() or c == " "]))
+    print(
+        " ".join(
+            [NESTED_MORSE[c.upper()] for c in sys.argv[1] if c.isalnum() or c == " "]
+        )
+    )
 
 
 if __name__ == "__main__":
@@ -53,4 +57,4 @@ if __name__ == "__main__":
     try:
         main()
     except AssertionError as e:
-        print(f'{e.__class__.__name__}: the arguments are bad')
+        print(f"{e.__class__.__name__}: the arguments are bad")
