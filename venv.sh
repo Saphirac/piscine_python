@@ -1,5 +1,7 @@
 # Create a virtual environment
-python3 -m venv venv
+python3 -m venv ./myenv
 
 # Activate it using the fish-specific activate script
-source venv/bin/activate.fish
+source ./myenv/bin/activate.fish
+
+pip install -r ./dep.txt
