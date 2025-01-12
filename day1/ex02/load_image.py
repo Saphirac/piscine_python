@@ -25,5 +25,13 @@ for i in range(width):
 # newim.show()
 
 invert = 255 - pxarr
+green = pxarr * [0,1,0]
+
+plt.subplot(1,2,1)
 plt.imshow(invert)
+plt.title("invert image")
+plt.subplot(1,2,2)
+plt.imshow(green)
+plt.title("green image")
+
 plt.show()
