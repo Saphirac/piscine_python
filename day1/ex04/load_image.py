@@ -8,5 +8,3 @@ def ft_load(path: str) -> np.array:
     print(f"The shape of the image is {pxarr.shape}")
     print(im.format)
     return pxarr
-
-print(ft_load("animal.jpeg"))
