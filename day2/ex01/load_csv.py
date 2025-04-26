@@ -12,4 +12,7 @@ graph = life_expectancy.loc["France"]
 
 plt.plot(graph)
 plt.xticks(ticks=graph.index[::40])
+plt.title('France Life expectancy Projections')
+plt.ylabel('Life expectancy')
+plt.xlabel('Year')
 plt.show()
