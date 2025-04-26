@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from load_image import ft_load
+import sys
 
 
 def ft_zoom(pxarr: np.array, w_size: int):
@@ -26,6 +27,8 @@ def ft_zoom(pxarr: np.array, w_size: int):
 
 def main():
     img = ft_load("animal.jpeg")
+    if img is None:
+        sys.exit(1)
     print(img)
     plt.imshow(ft_zoom(img, 400), cmap="gray")
     plt.show()

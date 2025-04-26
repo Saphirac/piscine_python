@@ -1,5 +1,6 @@
 from PIL import Image
 import numpy as np
+import sys
 
 
 def ft_load(path: str) -> np.array:
@@ -9,4 +10,13 @@ def ft_load(path: str) -> np.array:
     print(im.format)
     return pxarr
 
-print(ft_load("animal.jpeg"))
+
+def main():
+    img = ft_load("animal.jpeg")
+    if img is None:
+        sys.exit(1)
+    print(img)
+
+
+if __name__ == "__main__":
+    main()

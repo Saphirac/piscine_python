@@ -10,3 +10,4 @@ pyparsing
 python-dateutil
 six
 pandas
+seaborn[stats]
