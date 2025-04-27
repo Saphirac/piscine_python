@@ -66,4 +66,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.tracebacklimit = 0
+    try:
+        main()
+    except FileNotFoundError as e:
+        print(f"{e.__class__.__name__}: file doesn't exist")
+
