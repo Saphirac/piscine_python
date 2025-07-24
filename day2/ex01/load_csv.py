@@ -1,18 +1,12 @@
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
-pd.set_option('display.show_dimensions', False)
 
-life_expectancy = pd.read_csv("day2/life_expectancy_years.csv", index_col=0)
+def load(path: str) -> pd.DataFrame:
+    pd.set_option("display.show_dimensions", False)
 
-#print("Loading dataset of dimensions", life_expectancy.shape, '\n', life_expectancy)
+    mydata = pd.read_csv(path, index_col=0)
+    print("Loading dataset of dimensions", mydata.shape, mydata)
 
-graph = life_expectancy.loc["France"]
+    return mydata
 
-plt.plot(graph)
-plt.xticks(ticks=graph.index[::40])
-plt.title('France Life expectancy Projections')
-plt.ylabel('Life expectancy')
-plt.xlabel('Year')
-plt.show()
+

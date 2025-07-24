@@ -1,7 +1,15 @@
 import pandas as pd
 
-pd.set_option('display.show_dimensions', False)
 
-life_expectancy = pd.read_csv("day2/life_expectancy_years.csv")
+def load(path: str) -> pd.DataFrame:
+    pd.set_option("display.show_dimensions", False)
 
-print("Loading dataset of dimensions", life_expectancy.shape, life_expectancy)
+    mydata = pd.read_csv(path, index_col=0)
+    # if mydata.empty() :
+    #     print("No path, bad format...wtv")
+    #     return None
+    print("Loading dataset of dimensions", mydata.shape, mydata)
+
+    return mydata
+
+
