@@ -23,6 +23,3 @@ class calculator:
         result = [float(x - y) for x, y in zip(V1, V2)]
         print(result)
         return result
-
-
-

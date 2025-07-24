@@ -1,6 +1,5 @@
-from S1E9 import Stark
-from S1E7 import Baratheon, Lannister
 from DiamondTrap import King
+
 
 def main():
     Joffrey = King("Joffrey")
