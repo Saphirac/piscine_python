@@ -9,3 +9,5 @@ source $script_path/myenv/bin/activate.fish
 pip install --upgrade pip
 
 pip install -r $script_path/dep.txt
+
+echo "venv launched!"
