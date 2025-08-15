@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import seaborn as sns
 from load_csv import load
+import sys
 
 
 def parse_inc(x):
@@ -12,14 +13,16 @@ def parse_inc(x):
             return float(x[:-1]) * 10**3
     return float(x)
 
-#TODO : fix this thing
 
 def main():
     income = load("day2/income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
+    life = load("day2/life_expectancy_years.csv")
+    if income.empty or life.empty:
+        sys.exit(1)
+
     income_1900 = income[["country", "1900"]].rename(columns={"1900": "income_1900"})
     income_1900["income_1900"] = income_1900["income_1900"].map(parse_inc)
 
-    life = load("day2/life_expectancy_years.csv")
     life_1900 = life[["country", "1900"]].rename(columns={"1900": "life_1900"})
 
     # Merge my data
@@ -46,4 +49,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.tracebacklimit = 0
+    try:
+        main()
+    except Exception as e:
+        print(f"An error occured : {e.__class__.__name__}")
