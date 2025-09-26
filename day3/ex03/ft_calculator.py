@@ -1,15 +1,19 @@
 def auto_print(method):
     """Just to show how to make my own decorator"""
+
     def wrapper(self, *args, **kwargs):
         method(self, *args, **kwargs)
         print(self.data)
+
     return wrapper
+
 
 class calculator:
     """My calculator class"""
+
     def __init__(self, data: list):
         self.data = data
-    
+
     @auto_print
     def __add__(self, object) -> None:
         """Method to add a scalar to vector"""
@@ -33,4 +37,3 @@ class calculator:
         if object == 0:
             raise ZeroDivisionError("trying to divide by zero")
         self.data = [i / object for i in self.data]
-

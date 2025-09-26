@@ -33,4 +33,3 @@ class Stark(Character):
     def die(self):
         """Make the Stark character die."""
         super().die()
-
